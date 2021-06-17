@@ -1,0 +1,20 @@
+<div>
+<ul>
+  <li *ngFor="let test of tests" >
+  <label>Question  {{test.question}}</label>
+  <br>
+  <div class="radio">
+    <label><input type="radio" name="optradio" value="A">A. {{test.choice1}}</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="optradio" value="B">B. {{test.choice2}}</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="optradio" value="C">C. {{test.choice3}}</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="optradio" value="D">D. {{test.choice4}}</label>
+  </div>
+  </li>
+</ul>
+</div>
