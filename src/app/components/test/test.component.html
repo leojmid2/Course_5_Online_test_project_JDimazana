@@ -1,20 +1,21 @@
 <div>
-<ul>
-  <li *ngFor="let test of tests" >
-  <label>Question  {{test.question}}</label>
+<ol>
+  <li *ngFor="let test of tests; let i=index;" >
+  <label>Question: {{test.question}}</label>
+  <div class="radio">
+    <label><input type="radio" name="{{i+1}}" id="A" value={{test.choice1}} (change)="onSelect($event.target)">A. {{test.choice1}}</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="{{i+1}}" id="B" value={{test.choice1}} (change)="onSelect($event.target)">B. {{test.choice2}}</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="{{i+1}}" id="C" value={{test.choice1}} (change)="onSelect($event.target)">C. {{test.choice3}}</label>
+  </div>
+  <div class="radio">
+    <label><input type="radio" name="{{i+1}}" id="D" value={{test.choice1}} (change)="onSelect($event.target)">D. {{test.choice4}}</label>
+  </div>
   <br>
-  <div class="radio">
-    <label><input type="radio" name="optradio" value="A">A. {{test.choice1}}</label>
-  </div>
-  <div class="radio">
-    <label><input type="radio" name="optradio" value="B">B. {{test.choice2}}</label>
-  </div>
-  <div class="radio">
-    <label><input type="radio" name="optradio" value="C">C. {{test.choice3}}</label>
-  </div>
-  <div class="radio">
-    <label><input type="radio" name="optradio" value="D">D. {{test.choice4}}</label>
-  </div>
   </li>
-</ul>
+  <button class="btn btn-primary" (click)=onClick()>Submit Answer</button>
+</ol>
 </div>

@@ -1,0 +1,10 @@
+<p>Review Test Result</p>
+<div>
+  <ol>
+    <li *ngFor="let selection of userAnswers">
+    <label>Question:</label> {{selection.question}} <br>
+    <label>Your Answer:</label> [{{selection.userSelection}}] {{selection.userAnswerDetails}}<br>
+    <label>Correct Answer:</label> [{{selection.answerSelection}}] {{selection.userAnswerDetails}}
+  </ol>
+  <a class="btn btn-primary" routerLink="/test">Retake Test</a>
+</div>
