@@ -20,9 +20,8 @@ export class TestComponent implements OnInit {
 
   //userAnswers: Array<string> = [];
 
-  userAnswers: IUserAnswer[] = [{
-
-  }];
+//  userAnswers: IUserAnswer[] = [{},{},{},{},{},{},{},{},{},{},{}];
+userAnswers: IUserAnswer[] = [];
 
   constructor(private testService: TestService, private router: Router) { }
 
@@ -39,12 +38,15 @@ export class TestComponent implements OnInit {
     this.testService.getAnswer().subscribe(
       (answers: IAnswer[])=> this.answers = answers
     );
+
   }
 
   onSelect(selectEvent: any){
+    console.log('question number', selectEvent.name );
+    console.log('selected answer', selectEvent.id  );
+    this.userAnswers[selectEvent.name-1]={};
     this.userAnswers[selectEvent.name-1].userSelection = selectEvent.id;
     this.userAnswers[selectEvent.name-1].userAnswerDetails = selectEvent.value;
-    console.log('user answer in question', selectEvent.id  );
   }
 
   onClick(){
@@ -52,11 +54,11 @@ export class TestComponent implements OnInit {
     //use to navigate to different URL
     //test only - remove the navigate after testing
     //this.router.navigate(['/result']);
-    if (this.userAnswers.length === 1)
+    console.log("answer length " + this.answers.length)
+    if (this.userAnswers.length === this.answers.length)
     {
       console.log(this.userAnswers.length);
       this.computeResult();
-      //this.mapUserAnswer();
       this.router.navigate(['/result']);
     }
     else
@@ -66,16 +68,6 @@ export class TestComponent implements OnInit {
 
 
   }
-
-
-/*
- question: string;
-  userSelection: string;
-  userAnswerDetails: string;
-  answerSelection: string;
-  answerDetails: string
-
-*/
 
   computeResult(): void {
     let result: number = 0;

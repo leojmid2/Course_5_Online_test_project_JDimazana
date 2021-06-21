@@ -1,6 +1,14 @@
 <div class="container">
-  <h1> Your Test Result:</h1>
-  <h2> You scored {{ score }} of 11 </h2>
-  <a class="btn btn-primary" routerLink="/review">Review Test Result</a>
-  <a class="btn btn-primary" routerLink="/test">Retake Test</a>
+  <div class="card">
+    <div class="card-header">
+      Your Test Result:
+    </div>
+  <div class="card-body">
+    <h1> Your Test Result:</h1>
+    <h2> You scored {{ score }} out of 11 </h2>
+  </div>
+  <div class="card-footer text-muted">
+    <a class="btn btn-primary" routerLink="/review">Review Test Result</a> |
+    <a class="btn btn-primary" routerLink="/test">Retake Test</a>
+  </div>
 </div>

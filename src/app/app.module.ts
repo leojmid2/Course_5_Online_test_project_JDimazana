@@ -12,6 +12,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { QuestionComponent } from './components/question/question.component';
 import { ResultComponent } from './components/result/result.component';
 import { ReviewComponent } from './components/review/review.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ReviewComponent } from './components/review/review.component';
     WelcomeComponent,
     QuestionComponent,
     ResultComponent,
-    ReviewComponent
+    ReviewComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

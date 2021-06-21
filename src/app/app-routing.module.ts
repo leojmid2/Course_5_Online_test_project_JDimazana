@@ -12,7 +12,8 @@ const routes: Routes = [
   { path:'welcome',component: WelcomeComponent },
   { path:'test',component: TestComponent },
   { path:'result',component: ResultComponent },
-  { path:'review',component: ReviewComponent }
+  { path:'review',component: ReviewComponent },
+  { path:'question',component: QuestionComponent }
 ];
 
 @NgModule({
